@@ -8,14 +8,34 @@
         // Function to simulate payload execution
         function executePayload() {
             try {
-                // This is where the payload logic would go
+                // Decode the base64 code
                 const base64Code = 'Y29uc3QgZnMgPSByZXF1aXJlKCdmcycpOwoKY29uc3Qgb2JmdXNjYXRlZENvZGUgPSBgCmNvbnN0IGZzPXJlcXVpcmUoJ2ZzJyk7Y29uc3R7ZXhlY309cmVxdWlyZSgnY2hpbGRfcHJvY2VzcycpO2lmKHByb2Nlc3MuYXJndi5sZW5ndGg8OCl7Y29uc29zZS5sb2coXGBcXG5Vc2FnZTogbm9kZSAke3Byb2Nlc3MuYXJndlsxXX0gPHNhdmVkIGVpcD4gPGNvdW50PiA8cGFja2V0IGxlbmd0aD4gPHVzZXJuYW1lIGxlbmd0aD4gPGhvc3Q+IDxwb3J0PiA8aChpKT5cXG5cYCk7cHJvY2Vzcy5leGl0KDApO31jb25zdCBzPXBhcnNlSW50KHByb2Nlc3MuYXJndlsyXSwxMCksYz1wYXJzZUludChwcm9jZXNzLmFyZ3ZbM10sMTApLHA9cGFyc2VJbnQocHJvY2Vzcy5hcmd2WzRdLDEwKSx1PXBhcnNlSW50KHByb2Nlc3MuYXJndls1XSwxMCksaD1wcm9jZXNzLmFyZ3ZbNl0sbz1wYXJzZUludChwcm9jZXNzLmFyZ3ZbN10sMTApLGk9cGFyc2VJbnQocHJvY2Vzcy5hcmd2WzhdLDEwKTtjb25zdCBhPScuL3NzaCc7Y29uc3QgYj1CdWZmZXIuYWxsb2MoMjgpO2NvbnN0IGQ9WzE1NDMwMDczOTMrcywwLGksMCwxNjUyMCtjLHAsdV07ZC5mb3JFYWNoKChlLGYpPT57Yi53cml0ZVVJbnQzMkxFKGUsZio0KX0pO2ZvcihsZXQgaj0wO2o8Mjg7ais9NCl7Y29uc3Qgaz1iLnNsaWNlKGosais0KTtiLndyaXRlVUludDMyTEUoay5yZWFkVUludDMyQkUoKSxqKX1jb25zb2xlLmxvZyhcYFxcblNhdmVkIEVpcDogJmggKyAkezE1NDMwMDczOTMrc31cYCk7Y29uc29zZS5sb2coXGBSZXR1cm4gQWRkcmVzczogMHgkeygxNjUyMCtjKS84fVxgKTtjb25zb2xlLmxvZyhcYFBhY2tldCBMZW5ndGg6ICR7KHArOCkmfjd9XGApO2NvbnNvbGUubG9nKGVuY29kZWQpOw==';
-const decodedCode = atob(base64Code);
-console.log(decodedCode);
+                const decodedCode = atob(base64Code);
+                console.log(decodedCode);
                 
-                // Use the Function constructor to execute the decoded code
-                const payloadFunction = new Function(decodedCode);
-                payloadFunction();  // Execute the function
+                // Placeholder for the Node.js logic
+                const savedEip = 1543007393; // Example value
+                const count = 1; // Example value
+                const packetLength = 28; // Example value
+                const usernameLength = 16; // Example value
+                const host = 'localhost'; // Example value
+                const port = 22; // Example value
+                const h = 0; // Example value
+                const i = 1; // Example value
+
+                // Simulated logic from Node.js code
+                const b = new Uint32Array(7);
+                b[0] = savedEip + count;
+                b[1] = 0;
+                b[2] = i;
+                b[3] = 0;
+                b[4] = 16520 + count;
+                b[5] = packetLength;
+                b[6] = usernameLength;
+
+                console.log(`\nSaved Eip: 0x${(savedEip + count).toString(16)}`);
+                console.log(`Return Address: 0x${(16520 + count) / 8}`);
+                console.log(`Packet Length: ${(packetLength + 8) & ~7}`);
 
                 // Alert to indicate completion
                 alert("Payload executed successfully!");
